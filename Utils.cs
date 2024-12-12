@@ -4,7 +4,7 @@ using ModComponent.Utils;
 using System;
 using UnityEngine;
 
-namespace CanneryManufacturingDLC
+namespace CanneryManufacturing
 {
 
 	internal static class Utils

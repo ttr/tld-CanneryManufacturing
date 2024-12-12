@@ -31,5 +31,5 @@ This mod introduces several new items for ammunition crafting. These items can b
 
 * If you haven't done so already, install MelonLoader by downloading and running [MelonLoader.Installer.exe](https://github.com/HerpDerpinstine/MelonLoader/releases/latest/download/MelonLoader.Installer.exe)
 * Install the latest version of [ModComponent] and its dependencies.
-* Download the latest version of `CanneryManufacturingDLC.dll` and `CanneryManufacturing.modcomponent` from the [releases page]
-* Move `CanneryManufacturingDLC.dll` and `CanneryManufacturing.modcomponent` into your mods folder
+* Download the latest version of `CanneryManufacturing.dll` and `CanneryManufacturing.modcomponent` from the [releases page]
+* Move `CanneryManufacturing.dll` and `CanneryManufacturing.modcomponent` into your mods folder

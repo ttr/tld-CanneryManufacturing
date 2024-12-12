@@ -6,7 +6,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace CanneryManufacturingDLC
+namespace CanneryManufacturing
 {
 	internal class CannerySettings : JsonModSettings
 	{	
@@ -98,7 +98,7 @@ namespace CanneryManufacturingDLC
 
 			if (inSandbox && Settings.options.startGameWithCanneryCode)
 			{
-				CanneryManufacturingDLCMain.Unlock();
+				CanneryManufacturingMain.Unlock();
 			}
         }
     }

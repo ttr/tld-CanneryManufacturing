@@ -1,6 +1,6 @@
 ﻿using GearSpawner;
 
-namespace CanneryManufacturingDLC
+namespace CanneryManufacturing
 {
 	public static class SpawnProbabilities
 	{

@@ -1,5 +1,5 @@
 using MelonLoader;
-using CanneryManufacturingDLC;
+using CanneryManufacturing;
 using System.Reflection;
 using System.Runtime.InteropServices;
 
@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 
 //ModName, ModVersion, ModAuthor, and ModNamespace.ModClassInheritingFromMelonMod all need changed.
 
-[assembly: AssemblyTitle("CanneryManufacturingDLC")]
+[assembly: AssemblyTitle("CanneryManufacturing")]
 [assembly: AssemblyCopyright("Digitalzombie, Atlas-Lumi, ds5678")]
 
 //Version numbers in C# are a set of 1 to 4 positive integers separated by periods.
@@ -15,7 +15,7 @@ using System.Runtime.InteropServices;
 //The mod version need specified in three places.
 [assembly: AssemblyVersion("1.5.0")]
 [assembly: AssemblyFileVersion("1.5.0")]
-[assembly: MelonInfo(typeof(CanneryManufacturingDLCMain), "CanneryManufacturingDLC", "1.5.0", "Digitalzombie, Atlas-Lumi, ds5678", null)]
+[assembly: MelonInfo(typeof(CanneryManufacturingMain), "CanneryManufacturing", "1.5.0", "Digitalzombie, Atlas-Lumi, ds5678", null)]
 
 //This tells MelonLoader that the mod is only for The Long Dark.
 [assembly: MelonGame("Hinterland", "TheLongDark")]

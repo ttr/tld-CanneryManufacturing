@@ -6,7 +6,7 @@ using ModComponent.Utils;
 
 using UnityEngine;
 
-namespace CanneryManufacturingDLC
+namespace CanneryManufacturing
 {
 
 	internal static class Patches

@@ -6,9 +6,9 @@ using Il2CppInterop.Runtime.Injection;
 using System.Collections;
 using Il2CppTLD.Gear;
 
-namespace CanneryManufacturingDLC
+namespace CanneryManufacturing
 {
-	public class CanneryManufacturingDLCMain : MelonMod
+	public class CanneryManufacturingMain : MelonMod
 	{
 		public override void OnInitializeMelon()
 		{
