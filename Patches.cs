@@ -3,14 +3,26 @@ using Il2Cpp;
 using Il2CppTLD.Gear;
 using MelonLoader;
 using ModComponent.Utils;
-
 using UnityEngine;
+using System.Collections.Generic;
 
 namespace CanneryManufacturing
 {
+    internal static class Patches
+    {
+        private static readonly Dictionary<string, System.Action<GearItem>> GearRuinedActions = new Dictionary<string, System.Action<GearItem>>()
+        {
+            { "GEAR_FlareGun", GearItem_Awake.ForceWornOutForFirearms },
+            { "GEAR_Revolver", GearItem_Awake.ForceWornOutForFirearms },
+            { "GEAR_RevolverFancy", GearItem_Awake.ForceWornOutForFirearms },
+            { "GEAR_RevolverGreen", GearItem_Awake.ForceWornOutForFirearms },
+            { "GEAR_RevolverStubNosed", GearItem_Awake.ForceWornOutForFirearms },
+            { "GEAR_Rifle", GearItem_Awake.ForceWornOutForFirearms },
+            { "GEAR_Rifle_Vaughns", GearItem_Awake.ForceWornOutForFirearms },
+            { "GEAR_Rifle_Barbs", GearItem_Awake.ForceWornOutForFirearms },
+            { "GEAR_Rifle_Curators", GearItem_Awake.ForceWornOutForFirearms }
+        };
 
-	internal static class Patches
-	{		
         [HarmonyPatch(typeof(Panel_Crafting), "Enable", new Type[] { typeof(bool), typeof(bool) })]
         private static class WorkbenchLocationPatch
         {
@@ -27,87 +39,66 @@ namespace CanneryManufacturing
                 __instance.RefreshAvailableBlueprints();
             }
         }
-		
+
         //This patch handles ruining firearms on start
         [HarmonyPatch(typeof(GearItem), "Awake")]
-		private static class GearItem_Awake
-		{
-			private const string SCRAP_METAL_NAME = "GEAR_ScrapMetal";
+        private static class GearItem_Awake
+        {
+            private const string SCRAP_METAL_NAME = "GEAR_ScrapMetal";
 
-			internal static void Postfix(GearItem __instance)
-			{
-				if (Utils.NormalizeName(__instance.name) == "GEAR_Crampons")
-				{
-					__instance.m_Millable = Utils.GetOrCreateComponent<Millable>(__instance.gameObject);
+            internal static void Postfix(GearItem __instance)
+            {
+                string normalizedName = Utils.NormalizeName(__instance.name);
 
-					__instance.m_Millable.m_CanRestoreFromWornOut = true;
-					__instance.m_Millable.m_RecoveryDurationMinutes = 210;
-					__instance.m_Millable.m_RepairDurationMinutes = 30;
-					__instance.m_Millable.m_RepairRequiredGear = new GearItem[] { GetGearItemPrefab(SCRAP_METAL_NAME) };
-					__instance.m_Millable.m_RepairRequiredGearUnits = new int[] { 1 };
-					__instance.m_Millable.m_RestoreRequiredGear = new GearItem[] { GetGearItemPrefab(SCRAP_METAL_NAME) };
-					__instance.m_Millable.m_RestoreRequiredGearUnits = new int[] { 4 };
-					__instance.m_Millable.m_Skill = SkillType.None;
-				}
-				else if (Utils.NormalizeName(__instance.name) == "GEAR_Flaregun")
-				{
-					__instance.m_Millable = Utils.GetOrCreateComponent<Millable>(__instance.gameObject);
+                // Handle special items (e.g., crampons, flaregun)
+                if (normalizedName == "GEAR_Crampons")
+                {
+                    SetupMillable(__instance, 210, 30, 1, 4);
+                }
+                else if (normalizedName == "GEAR_Flaregun")
+                {
+                    SetupMillable(__instance, 180, 30, 1, 3);
+                }
+                else if (GearRuinedActions.ContainsKey(normalizedName))
+                {
+                    GearRuinedActions[normalizedName].Invoke(__instance);
+                }
+                else if (__instance.m_BeenInspected)
+                {
+                    return;
+                }
+                else if (ShouldForceWornOut(normalizedName))
+                {
+                    __instance.ForceWornOut();
+                }
+            }
 
-					__instance.m_Millable.m_CanRestoreFromWornOut = true;
-					__instance.m_Millable.m_RecoveryDurationMinutes = 180;
-					__instance.m_Millable.m_RepairDurationMinutes = 30;
-					__instance.m_Millable.m_RepairRequiredGear = new GearItem[] { GetGearItemPrefab(SCRAP_METAL_NAME) };
-					__instance.m_Millable.m_RepairRequiredGearUnits = new int[] { 1 };
-					__instance.m_Millable.m_RestoreRequiredGear = new GearItem[] { GetGearItemPrefab(SCRAP_METAL_NAME) };
-					__instance.m_Millable.m_RestoreRequiredGearUnits = new int[] { 3 };
-					__instance.m_Millable.m_Skill = SkillType.None;
-				}
-				else if (__instance.m_BeenInspected)
-				{
-					return;
-				}
-				else if (Settings.options.flareGunsStartRuined && Utils.NormalizeName(__instance.name) == "GEAR_FlareGun")
-				{
-					__instance.ForceWornOut();
-				}
-				else if (Settings.options.revolversStartRuined && Utils.NormalizeName(__instance.name) == "GEAR_Revolver")
-				{
-					__instance.ForceWornOut();
-				}
-				else if (Settings.options.revolversStartRuined && Utils.NormalizeName(__instance.name) == "GEAR_RevolverFancy")
-				{
-					__instance.ForceWornOut();
-				}
-				else if (Settings.options.revolversStartRuined && Utils.NormalizeName(__instance.name) == "GEAR_RevolverGreen")
-				{
-					__instance.ForceWornOut();
-				}
-				else if (Settings.options.revolversStartRuined && Utils.NormalizeName(__instance.name) == "GEAR_RevolverStubNosed")
-				{
-					__instance.ForceWornOut();
-				}
-				else if (Settings.options.riflesStartRuined && Utils.NormalizeName(__instance.name) == "GEAR_Rifle")
-				{
-					__instance.ForceWornOut();
-				}
-				else if (Settings.options.riflesStartRuined && Utils.NormalizeName(__instance.name) == "GEAR_Rifle_Vaughns")
-				{
-					__instance.ForceWornOut();
-				}
-				else if (Settings.options.riflesStartRuined && Utils.NormalizeName(__instance.name) == "GEAR_Rifle_Barbs")
-				{
-					__instance.ForceWornOut();
-				}
-				else if (Settings.options.riflesStartRuined && Utils.NormalizeName(__instance.name) == "GEAR_Rifle_Curators")
-				{
-					__instance.ForceWornOut();
-				}
-			}
+            private static void SetupMillable(GearItem gearItem, int recoveryDuration, int repairDuration, int repairUnits, int restoreUnits)
+            {
+                gearItem.m_Millable = Utils.GetOrCreateComponent<Millable>(gearItem.gameObject);
+                gearItem.m_Millable.m_CanRestoreFromWornOut = true;
+                gearItem.m_Millable.m_RecoveryDurationMinutes = recoveryDuration;
+                gearItem.m_Millable.m_RepairDurationMinutes = repairDuration;
+                gearItem.m_Millable.m_RepairRequiredGear = new GearItem[] { GetGearItemPrefab(SCRAP_METAL_NAME) };
+                gearItem.m_Millable.m_RepairRequiredGearUnits = new int[] { repairUnits };
+                gearItem.m_Millable.m_RestoreRequiredGear = new GearItem[] { GetGearItemPrefab(SCRAP_METAL_NAME) };
+                gearItem.m_Millable.m_RestoreRequiredGearUnits = new int[] { restoreUnits };
+                gearItem.m_Millable.m_Skill = SkillType.None;
+            }
 
-			private static GearItem GetGearItemPrefab(string name) => GearItem.LoadGearItemPrefab(name).GetComponent<GearItem>();
-		}
+            private static bool ShouldForceWornOut(string normalizedName)
+            {
+                return (Settings.options.flareGunsStartRuined && normalizedName == "GEAR_FlareGun") ||
+                       (Settings.options.revolversStartRuined && normalizedName.StartsWith("GEAR_Revolver")) ||
+                       (Settings.options.riflesStartRuined && normalizedName.StartsWith("GEAR_Rifle"));
+            }
 
+            internal static void ForceWornOutForFirearms(GearItem gearItem)
+            {
+                gearItem.ForceWornOut();
+            }
 
-		
-	}
+            private static GearItem GetGearItemPrefab(string name) => GearItem.LoadGearItemPrefab(name).GetComponent<GearItem>();
+        }
+    }
 }
