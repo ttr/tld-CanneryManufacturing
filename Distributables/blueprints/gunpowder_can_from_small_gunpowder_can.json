@@ -6,8 +6,13 @@
       "Count": 2
     }
   ],
+  "RequiredPowder": [
+    {
+      "Powder": "POWDER_Gunpowder",
+      "QuantityInKilograms": 0.5
+    }
+  ],
   "KeroseneLitersRequired": 0,
-  "GunpowderKGRequired": 0.5,
   "RequiredTool": "GEAR_Knife",
   "OptionalTools": [ "GEAR_KnifeImprovised" ],
   "RequiredCraftingLocation": "Workbench",

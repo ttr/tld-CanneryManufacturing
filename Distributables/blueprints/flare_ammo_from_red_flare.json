@@ -7,7 +7,6 @@
     }
   ],
   "KeroseneLitersRequired": 0,
-  "GunpowderKGRequired": 0,
   "RequiredTool": "GEAR_Knife",
   "OptionalTools": [ "GEAR_KnifeImprovised" ],
   "RequiredCraftingLocation": "AmmoWorkbench",

@@ -1,13 +1,13 @@
 {
   "Name": "FlareAmmoFromSmallGunPowderCan",
-  "RequiredGear": [
+  "RequiredGear": [],
+  "RequiredPowder": [
     {
-      "Item": "GEAR_SmallGunpowderCan",
-      "Count": 1
+      "Powder": "POWDER_Gunpowder",
+      "QuantityInKilograms": 0.25
     }
   ],
   "KeroseneLitersRequired": 0,
-  "GunpowderKGRequired": 0.25,
   "RequiredTool": "",
   "OptionalTools": [],
   "RequiredCraftingLocation": "AmmoWorkbench",

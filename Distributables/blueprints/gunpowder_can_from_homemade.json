@@ -16,7 +16,6 @@
 
   ],
   "KeroseneLitersRequired": 0,
-  "GunpowderKGRequired": 0,
   "RequiredTool": "GEAR_Hammer",
   "OptionalTools": [],
   "RequiredCraftingLocation": "AmmoWorkbench",
