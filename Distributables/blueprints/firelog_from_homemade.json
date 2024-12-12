@@ -1,0 +1,35 @@
+{
+  "Name": "FirelogFromHomemade",
+  "RequiredGear": [
+    {
+      "Item": "GEAR_Softwood",
+      "Count": 1
+    },
+    {
+      "Item": "GEAR_Hardwood",
+      "Count": 1
+    },
+    {
+      "Item": "GEAR_ReclaimedWoodB",
+      "Count": 2
+    }
+  ],
+  "RequiredPowder": [
+    {
+      "Powder": "POWDER_Gunpowder",
+      "QuantityInKilograms": 0.05
+    }
+  ],
+  "KeroseneLitersRequired": 0,
+  "RequiredTool": "GEAR_hatchet",
+  "OptionalTools": [ "GEAR_HatchetImprovised" ],
+  "RequiredCraftingLocation": "Workbench",
+  "RequiresLitFire": false,
+  "RequiresLight": true,
+  "CraftedResult": "GEAR_Firelog",
+  "CraftedResultCount": 1,
+  "DurationMinutes": 45,
+  "CraftingAudio": "Play_CraftingGeneric",
+  "AppliedSkill": "None",
+  "ImprovedSkill": "None"
+}
