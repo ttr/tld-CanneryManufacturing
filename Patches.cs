@@ -24,7 +24,7 @@ namespace CanneryManufacturingDLC
                     }
                 }
 
-                __instance.RefreshBlueprintDisplayList();
+                __instance.RefreshAvailableBlueprints();
             }
         }
 		
