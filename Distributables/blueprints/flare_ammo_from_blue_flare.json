@@ -15,7 +15,7 @@
   "RequiresLight": true,
   "CraftedResult": "GEAR_FlareGunAmmoSingle",
   "CraftedResultCount": 4,
-  "DurationMinutes": 150,
+  "DurationMinutes": 90,
   "CraftingAudio": "Play_CraftingGunPowder",
   "AppliedSkill": "None",
   "ImprovedSkill": "None"

@@ -3,7 +3,7 @@
   "RequiredGear": [
     {
       "Item": "GEAR_BlueFlare",
-      "Count": 3
+      "Count": 2
     }
   ],
   "KeroseneLitersRequired": 0,
@@ -15,7 +15,7 @@
   "RequiresLight": true,
   "CraftedResult": "GEAR_GunpowderCan",
   "CraftedResultCount": 1,
-  "DurationMinutes": 90,
+  "DurationMinutes": 30,
   "CraftingAudio": "Play_CraftingGunPowder",
   "AppliedSkill": "None",
   "ImprovedSkill": "None"

@@ -1,16 +1,25 @@
 {
-  "Name": "GunpowderFromBlueFlare",
+  "Name": "GunpowderFromHomemade",
   "RequiredGear": [
     {
-      "Item": "GEAR_SmallGunpowderCan",
+      "Item": "GEAR_Coal",
+      "Count": 10
+    },
+    {
+      "Item": "GEAR_ScrapMetal",
       "Count": 2
+    },
+    {
+      "Item": "GEAR_WoodMatches",
+      "Count": 3
     }
+
   ],
   "KeroseneLitersRequired": 0,
   "GunpowderKGRequired": 0,
-  "RequiredTool": "GEAR_Knife",
-  "OptionalTools": [ "GEAR_KnifeImprovised" ],
-  "RequiredCraftingLocation": "Workbench",
+  "RequiredTool": "GEAR_Hammer",
+  "OptionalTools": [],
+  "RequiredCraftingLocation": "AmmoWorkbench",
   "RequiresLitFire": false,
   "RequiresLight": true,
   "CraftedResult": "GEAR_GunpowderCan",

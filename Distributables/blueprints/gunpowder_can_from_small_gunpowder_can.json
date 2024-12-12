@@ -1,20 +1,20 @@
 {
-  "Name": "FlareAmmoFromGunPowder",
+  "Name": "GunpowderFromSmallCan",
   "RequiredGear": [
     {
       "Item": "GEAR_SmallGunpowderCan",
-      "Count": 1
+      "Count": 2
     }
   ],
   "KeroseneLitersRequired": 0,
-  "GunpowderKGRequired": 0.30,
-  "RequiredTool": "",
-  "OptionalTools": [],
-  "RequiredCraftingLocation": "AmmoWorkbench",
+  "GunpowderKGRequired": 0.5,
+  "RequiredTool": "GEAR_Knife",
+  "OptionalTools": [ "GEAR_KnifeImprovised" ],
+  "RequiredCraftingLocation": "Workbench",
   "RequiresLitFire": false,
   "RequiresLight": true,
-  "CraftedResult": "GEAR_FlareGunAmmoSingle",
-  "CraftedResultCount": 4,
+  "CraftedResult": "GEAR_GunpowderCan",
+  "CraftedResultCount": 1,
   "DurationMinutes": 15,
   "CraftingAudio": "Play_CraftingGunPowder",
   "AppliedSkill": "None",

@@ -1,15 +1,15 @@
 {
-  "Name": "FlareAmmoFromRedFlare",
+  "Name": "FlareAmmoFromSmallGunPowderCan",
   "RequiredGear": [
     {
-      "Item": "GEAR_FlareA",
+      "Item": "GEAR_SmallGunpowderCan",
       "Count": 1
     }
   ],
   "KeroseneLitersRequired": 0,
-  "GunpowderKGRequired": 0,
-  "RequiredTool": "GEAR_Knife",
-  "OptionalTools": [ "GEAR_KnifeImprovised" ],
+  "GunpowderKGRequired": 0.25,
+  "RequiredTool": "",
+  "OptionalTools": [],
   "RequiredCraftingLocation": "AmmoWorkbench",
   "RequiresLitFire": false,
   "RequiresLight": true,
