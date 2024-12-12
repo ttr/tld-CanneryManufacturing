@@ -15,7 +15,7 @@ namespace CanneryManufacturing
 		[Name("Gunpowder Crafting Location")]
 		[Description("The default location is at the Ammo Workbench.")]
 		[Choice("Anywhere", "Workbench", "Forge", "Ammo Workbench")]
-		public int gunpowderLocationIndex = 2;
+		public int gunpowderLocationIndex = 3;
 
 		[Name("Unlock cannery door")]
 		[Description("Removes the need to find the code sheet.")]
