@@ -1,8 +1,8 @@
-﻿# Cannery Manufacturing v1.5.0
+﻿# Cannery Manufacturing v1.7.0
 
 A mod for *The Long Dark* designed to improve the usability of the Last Resort Cannery Workshop in Bleak Inlet, especially on Interloper difficulty.
 
-original by ds5678, updated by Digitalzombie & Atlas Lumi
+original by ds5678, updated by Digitalzombie & Atlas Lumi, 1.7 By Varrxion (Please reach out to Varrxion with bugs)
 
 ## Features
 
