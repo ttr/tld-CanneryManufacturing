@@ -1,0 +1,22 @@
+{
+  "Name": "ScrapMetalFromRecycledCan",
+  "RequiredGear": [
+    {
+      "Item": "GEAR_RecycledCan",
+      "Count": 4
+    }
+  ],
+  "RequiredPowder": [],
+  "KeroseneLitersRequired": 0,
+  "RequiredTool": "",
+  "OptionalTools": [],
+  "RequiredCraftingLocation": "Forge",
+  "RequiresLitFire": true,
+  "RequiresLight": true,
+  "CraftedResult": "GEAR_ScrapMetal",
+  "CraftedResultCount": 1,
+  "DurationMinutes": 15,
+  "CraftingAudio": "Play_CraftingMetal",
+  "AppliedSkill": "None",
+  "ImprovedSkill": "None"
+}
