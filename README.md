@@ -17,7 +17,9 @@ original by ds5678, updated by Digitalzombie & Atlas Lumi, 1.7 By Varrxion (Plea
 9. A setting to remove the need for the Cannery Code Sheet
 10. Settings to make firearms start in a ruined state
 11. Firearm Reloading Supplies scattered throughout the world.
-12. Renewable "Homemade" gunpowder recipe at the Ammo Workbench.
+12. Renewable "Homemade" gunpowder recipe at the Ammo Workbench. (expensive for balance)
+13. Craftable Firelog (expensive for balance)
+14. Cans to Scrap, Cookpot to Scrap, Scrap to Cookpot (more expensive for balance)
 
 ## Firearm Reloading Supplies
 
