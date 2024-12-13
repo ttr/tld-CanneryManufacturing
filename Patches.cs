@@ -59,17 +59,16 @@ namespace CanneryManufacturing
                 {
                     SetupMillable(__instance, 180, 30, 1, 3);
                 }
-                else if (GearRuinedActions.ContainsKey(normalizedName))
-                {
-                    GearRuinedActions[normalizedName].Invoke(__instance);
-                }
                 else if (__instance.m_BeenInspected)
                 {
                     return;
                 }
-                else if (ShouldForceWornOut(normalizedName))
+                else if (GearRuinedActions.ContainsKey(normalizedName))
                 {
-                    __instance.ForceWornOut();
+                    if (ShouldForceWornOut(normalizedName))
+                    {
+                        GearRuinedActions[normalizedName].Invoke(__instance);
+                    }
                 }
             }
 
